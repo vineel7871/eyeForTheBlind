@@ -9,17 +9,15 @@ The dataset is taken from the [Kaggle website](https://www.kaggle.com/datasets/a
 
 ## Setting up the Project
 - Install dependencies from requirements file
-<br>
-`pip install -r requirements.txt`
+```pip install -r requirements.txt```
 <br>
 - Install nltk tokenizer
 <br>
-`import nltk; nltk.download('punkt'); nltk.download('stopwords')`
+```import nltk; nltk.download('punkt'); nltk.download('stopwords')```
 <br>
 - Download the dataset to the data folder from [here](https://www.kaggle.com/datasets/adityajn105/flickr8k)
 <br>
 - The folder structure should be like
-<br>
   - root
     - data
       - flikr8k
@@ -31,7 +29,31 @@ The dataset is taken from the [Kaggle website](https://www.kaggle.com/datasets/a
       - training
       - evaluation
 
-## Data Preprocessing
+## Data Understanding
+1. Import the dataset and read image & captions into two seperate variables
+2. Visualise both the images & text present in the dataset
+3. Create a dataframe which summarizes the image, path & captions as a dataframe
+4. Create a list which contains all the captions & path
+5. Visualise the top 30 occurring words in the captions
+
+## Pre-Processing the captions
+1.Create the tokenized vectors by tokenizing the captions fore ex :split them using spaces & other filters. 
+This gives us a vocabulary of all of the unique words in the data. Keep the total vocaublary to top 5,000 words for saving memory.
+
+2.Replace all other words with the unknown token "UNK" .
+
+3.Create word-to-index and index-to-word mappings.
+
+4.Pad all sequences to be the same length as the longest one.
+
+## Pre-processing the images
+
+1.Resize them into the shape of (299, 299)
+
+3.Normalize the image within the range of -1 to 1, such that it is in correct format for InceptionV3. 
+
+
+
 
 
 
